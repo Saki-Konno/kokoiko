@@ -1,0 +1,68 @@
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "ログイン",new_post_path %></li>
+    
+   
+  </ul>
+  
+ 
+  </div>
+  </header>
+
+
+<h3>詳細</h3>
+<div class="post">
+  <p><%= image_tag @post.image_url, size: "250x200" if @post.image? %></p>
+  <p><%= @post.place %></p>
+  <p><%= @post.genre %></p>
+  <p><%= @post.about %></p>
+  <p><%= @post.created_at %></p>
+
+  <% if user_signed_in? %>
+  <% if current_user.already_liked?(@post) %>
+      <%= link_to post_like_path(@post), method: :delete do %>
+         <p>いいねを取り消す</p><%= @post.likes.count %>
+      <% end %>
+  <% else %>
+      <%= link_to post_likes_path(@post), method: :post do %>
+
+         <p>いいね</p><i class="fas fa-heart"></i><%= @post.likes.count %>
+      <% end %>
+  <% end %>
+<% else %>
+  <p>いいねの数 = </p><%= @post.likes.count %>
+<% end %>
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>
+
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.name unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%= link_to "一覧に戻る", posts_path %>

@@ -1,0 +1,36 @@
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "説明", posts_top_path %></li>
+    <% if user_signed_in? %>
+  <li><%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+<% else %>
+  
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+ </ul>
+  </div>
+  </header>
+
+<div class="about">
+    <div class="about2">
+    <h1>Kokoikoとは</h1>
+    <h3>行きたい場所を投稿、共有することで自分の行きたい場所をリスト化し、管理できる！</h3>
+    </div>
+
+    <div class="about3">
+    
+
+    </div>
+</div>
+  
+
+
+
+
+
+

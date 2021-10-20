@@ -1,0 +1,25 @@
+.mypage{
+    padding: 0.5em 1em;
+    margin: 50px auto;
+    width: 50%;
+    border: solid 3px #99CCAC;
+    border-radius: 10px;
+    background-color: #FFEFD9;
+    height: 50%;
+}
+
+.mypage2{
+    margin-left:30px;
+    margin-top:30px;
+    margin-bottom:30px;
+    width: 30%;
+    background-color:#FFEFD9;
+    border: double 3px #F2948A;
+}
+
+.mainmypage2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}

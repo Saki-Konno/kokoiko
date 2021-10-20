@@ -1,0 +1,55 @@
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "説明", posts_top_path %></li>
+    <% if user_signed_in? %>
+  <li><%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+<% else %>
+  
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+</html>
+   
+  </ul>
+  
+ 
+
+  </div>
+  </header>
+
+
+<%= form_for @post do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :place %>
+    <%= f.text_field :place, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :who%>
+    <%= f.select :genre, 
+    [["友人", "友人と"], 
+    ["家族", "家族と"], 
+    ["恋人", "恋人と"],
+    ["その他", "その他"]], prompt: "誰と行きたい？" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :comment %>
+  <%= f.text_area :about, :size => "50x5", prompt: "コメント" %>
+  </div>
+
+
+  <%= f.submit "編集する" %>
+  <% end %>
+

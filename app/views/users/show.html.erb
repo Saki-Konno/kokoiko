@@ -1,0 +1,49 @@
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+  
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "説明", posts_top_path %></li>
+    <% if user_signed_in? %>
+  <li><%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+<% else %>
+  
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+</html>
+   
+  </ul>
+  
+
+  </div>
+  </header>
+
+
+<h1>マイページ</h1>
+<div class="mypage">
+<p><%=  image_tag @user.image_url, size: "100x100" if @user.image? %></p>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+</div>
+
+
+<h2>ユーザーの投稿一覧</h2>
+
+<div class="mainmypage2">  
+  <% @user.posts.each do |t| %>
+    <div class="mypage2">
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <p><%= t.place %></p>
+      <%= t.genre %>
+      <p><%= t.about %></p>
+    </div>
+  <% end %>
+</div>

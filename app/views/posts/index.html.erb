@@ -1,0 +1,106 @@
+
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+  
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "説明", posts_top_path %></li>
+    <% if user_signed_in? %>
+  <li><%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+<% else %>
+  
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+</html>
+   
+  </ul>
+  
+ <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+  </div>
+  </header>
+
+
+<div class="top-container">
+    <div class="topimage">
+
+    </div>
+    <div class="topimage2">
+        <div class="intopimage2">
+        <h5>Kokoiko</h5>
+        <p>step1 行きたい場所を投稿しよう！</p>
+    </div>
+</div>
+</div>
+
+<h3>行きたい一覧</h3>
+
+
+
+<%= link_to "新規投稿へ", new_post_path %>
+<div class="posts-container">
+  
+<% if user_signed_in? %>
+<%= link_to "マイページへ", user_path(current_user.id) %>　
+<% end %>
+
+<div class="mainposts">
+<% @posts.each do |t| %>
+    <div class="posts">
+
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+    <h3><%= t.user.name %></h3>
+
+    
+
+      
+      <p>行きたい場所：<%= t.place %></>
+      
+      <p>誰と行きたい：<%= t.genre %></p>
+      <%= t.about %>
+      <br>
+      <%= t.created_at %>
+      <br>
+      
+      <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+              
+          <% end %>
+      <% else %>
+          <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+             
+              <i class="far fa-heart"></i><%= t.likes.count %>
+              
+          <% end %>
+      <% end %>
+  <% else %>
+      
+      <i class="far fa-heart"></i><%= t.likes.count %>
+     
+  <% end %>
+  <%= link_to post_path(t.id), method: :get do %>
+             
+      <i class="far fa-comment-alt"></i><%= t.comments.count %>
+      
+  <% end %>
+  
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <% if user_signed_in? && current_user.id == t.user_id %> 
+        <%= link_to "編集する", edit_post_path(t.id) %>
+        <%= link_to "削除する", post_path(t.id), method: :delete %>
+        <% end %>
+      
+     </div>
+
+  <% end %>
+  </div>
+</div>

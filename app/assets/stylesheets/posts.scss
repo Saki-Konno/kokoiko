@@ -1,0 +1,54 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top-container{
+    display: flex;
+    height: 600px;
+    width: 100%;
+}
+
+.topimage{
+    display: inline-block;
+    background-image: url("/assets/topimage.png"); 
+    width: 40%;
+    height: 500px;
+    background-size: cover;
+
+}
+
+.topimage2{
+    margin-top: 10px;
+    display: inline-block;
+    background-image: url("/assets/topimageframe.png"); 
+    width: 52%;
+    height: 530px;
+    background-size: cover;
+    background-color:#f2948a1e
+    
+
+}
+
+.mainposts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.posts{
+    margin-left:30px;
+    margin-top:30px;
+    width: 30%;
+    background-color:#FFEFD9;
+    border: double 3px #F2948A;
+    margin-bottom:30px;
+}
+
+h5{
+    font-size: 50px;
+}
+   
+.intopimage2{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px; 
+}
