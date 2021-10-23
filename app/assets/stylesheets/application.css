@@ -25,16 +25,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Fredoka One', cursive;
+
   }
   header a {
     color: #38342E; 
     text-decoration: none; 
-    font-family:"Abhaya Libre Medium","ヒラギノ角ゴ Pro W3";
+    
   }
   header h1 {
     color: #38342E;
     margin-left: 20px;
-    font-family:"メイリオ","ヒラギノ角ゴ";
+    
   }
   .header-list {
     display: flex;
@@ -51,3 +53,14 @@
   body{
     background-color: #FFFDEB;
   }
+
+  footer{
+    height: 50px;
+    background-color: #D9F7E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  

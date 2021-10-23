@@ -1,3 +1,10 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .about2{
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -6,4 +13,46 @@
     border-left: double 7px #4ec4d3;/*左線*/
     border-right: double 7px #4ec4d3;/*右線*/
     width: 60%;
+    text-align: center;
+    height: 100px;
+}
+
+.about3{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+    width: 70%;
+    height: 150px;
+}
+
+.about4{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+    width: 70%;
+    height: 150px;
+}
+
+.about5{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+    width: 70%;
+    height: 150px;
+}
+
+h3{
+    margin-top: 30px;
+}
+
+.aboutimage{
+    background-image: url("/assets/neko1.jpg"); 
+    height: 300px;
+    width: 500px;
 }

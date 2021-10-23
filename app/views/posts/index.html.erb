@@ -27,27 +27,25 @@
 
 
 <div class="top-container">
-    <div class="topimage">
+ 
+      <div class="topimage">
+      <h5>Kokoiko</h5>
+      <p>～みんなの”ここにいきたい”を共有しよう～</p>
+      </div>
+ 
 
-    </div>
-    <div class="topimage2">
-        <div class="intopimage2">
-        <h5>Kokoiko</h5>
-        <p>step1 行きたい場所を投稿しよう！</p>
-    </div>
-</div>
+      <div class="topimage2">
+          <div class="intopimage2">
+           
+          </div>
+      </div>
+ 
 </div>
 
 <h3>行きたい一覧</h3>
 
 
 
-<%= link_to "新規投稿へ", new_post_path %>
-<div class="posts-container">
-  
-<% if user_signed_in? %>
-<%= link_to "マイページへ", user_path(current_user.id) %>　
-<% end %>
 
 <div class="mainposts">
 <% @posts.each do |t| %>

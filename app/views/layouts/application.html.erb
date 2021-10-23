@@ -12,6 +12,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -19,7 +20,12 @@
 <main>
     <%= yield %>
 </main>
+
   </body>
 
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+  <footer>
+  <p1>Copyright © 2021 Saki Konno All Rights Reserved.</p1>
+ </footer>
 
