@@ -23,10 +23,11 @@
   </div>
   </header>
 
-
-<h3>新規行きたい</h3>
+<div class=new>
+<h2>新規行きたい</h2>
 
 <div class="mainfield">
+
   <%= form_for @post do |f| %>
   
 
@@ -54,12 +55,16 @@
     <%= f.text_area :about, :size => "50x5", prompt: "コメント" %>
     </div>
 
-    
-  
+   
   
   <%= f.submit "行きたい!を投稿する" %>
 <% end %>
 </div>
 
+<div class="newimage">
+</div>
 
-<%= link_to "一覧に戻る", posts_path %>
+
+
+
+</div>

@@ -2,7 +2,6 @@
 <h1>Kokoiko</h1>
   <div class="header-list">
   <ul>
-  
     <li><%= link_to "HOME", posts_path %></li>
     <li><%= link_to "新規投稿",new_post_path %></li>
     <li><%= link_to "説明", posts_top_path %></li>
@@ -13,16 +12,18 @@
   
 <li><%= link_to "ログイン", new_user_session_path %></li>
 <% end %>
-</html>
-   
-  </ul>
-  
+ </ul>
+  </div>
+  </header>
+
+
+
 
   </div>
   </header>
 
 
-<h1>マイページ</h1>
+<h2>マイページ</h2>
 <div class="mypage">
 <p><%=  image_tag @user.image_url, size: "100x100" if @user.image? %></p>
 <p>名前 : <%= @user.name %></p>

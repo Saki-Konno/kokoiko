@@ -4,7 +4,11 @@
     width: 50%;
     border: solid 3px #F2948A;
     border-radius: 10px;
-    background-color: #FFEFD9;
+    background-color: #FFEFD9; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
   
   .field{
@@ -12,4 +16,21 @@
     text-align: left;
   }
 
+  h2{
+    text-align: center;
+  }
+.new{
+  height: 650px;
+}
+
+.field{
+  font-family: 'Fredoka One', cursive;
+}
+
+.newimage{
+  background-image: url("/assets/neko2.png");
+  width: 500px; 
+  height: 350px;
+  margin-left: 10px;
+}
   

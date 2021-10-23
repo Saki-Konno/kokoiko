@@ -8,7 +8,7 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -22,10 +22,11 @@
 </main>
 
   </body>
-
+<div class=logout>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-
+</div>
+<div class=footer>
   <footer>
   <p1>Copyright © 2021 Saki Konno All Rights Reserved.</p1>
  </footer>
-
+</div>

@@ -1,4 +1,25 @@
-<h2>Sign up</h2>
+<header>
+<h1>Kokoiko</h1>
+  <div class="header-list">
+  <ul>
+    <li><%= link_to "HOME", posts_path %></li>
+    <li><%= link_to "新規投稿",new_post_path %></li>
+    <li><%= link_to "説明", posts_top_path %></li>
+    <% if user_signed_in? %>
+  <li><%= link_to "マイページ", user_path(current_user.id) %>
+  </li>
+<% else %>
+  
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<% end %>
+ </ul>
+  </div>
+  </header>
+
+
+
+
+<h2>新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -16,7 +37,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> </em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -27,7 +48,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録する" %>
   </div>
 <% end %>
 
